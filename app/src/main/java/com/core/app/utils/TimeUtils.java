@@ -14,56 +14,6 @@ import java.util.TimeZone;
 public class TimeUtils {
     private static final String TAG = TimeUtils.class.getSimpleName();
 
-    public final static SimpleDateFormat SIMPLE_DATE_MONTH = new SimpleDateFormat("MM/dd");
-    public final static SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
-    public final static SimpleDateFormat SIMPLE_TIME_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-    public final static SimpleDateFormat SIMPLE_SECOND_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    public final static SimpleDateFormat TIME_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-    public final static SimpleDateFormat SIMPLE_DATE_TAME_FORMAT = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
-
-    static {
-        TIME_FORMAT.setTimeZone(TimeZone.getTimeZone("UTC"));
-    }
-
-    public static Date parseDate(String time) {
-        Date date = new Date();
-        if (!TextUtils.isEmpty(time)) {
-            try {
-                date = TIME_FORMAT.parse(time);
-            } catch (ParseException e) {
-                Log.e(TAG, "parseDate", e);
-            }
-        }
-        return date;
-    }
-
-    public static String convertDate(String time) {
-        Date date = new Date();
-        try {
-            date = TimeUtils.SIMPLE_DATE_FORMAT.parse(time);
-        } catch (ParseException e) {
-            Log.e(TAG, "convertDate", e);
-        }
-        return TimeUtils.TIME_FORMAT.format(date);
-    }
-
-    public static String converDateTime(String time){
-        Date date = new Date();
-        try {
-            date = TimeUtils.SIMPLE_DATE_TAME_FORMAT.parse(time);
-        } catch (ParseException e) {
-            Log.e(TAG, "convertDate", e);
-        }
-        return TimeUtils.TIME_FORMAT.format(date);
-    }
-
-    public static String stampToDate(String stamp){
-        long lt = Long.parseLong(stamp);
-        Date date = new Date(lt);
-        String res = SIMPLE_DATE_FORMAT.format(date);
-        return res;
-    }
-
     /**
      * yyyy-MM-dd HH:mm:ss
      */
@@ -89,7 +39,6 @@ public class TimeUtils {
      */
     @SuppressLint("SimpleDateFormat")
     public static String getNowYMD() {
-
         SimpleDateFormat mDateFormat = new SimpleDateFormat(
                 "yyyy-MM-dd");
         return mDateFormat.format(new Date());
@@ -108,7 +57,6 @@ public class TimeUtils {
 
     @SuppressLint("SimpleDateFormat")
     public static String getMD(Date date) {
-
         SimpleDateFormat mDateFormat = new SimpleDateFormat(
                 "MM-dd");
         return mDateFormat.format(date);

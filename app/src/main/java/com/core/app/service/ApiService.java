@@ -1,5 +1,8 @@
 package com.core.app.service;
 
+import com.core.app.ui.model.MainModel;
+import com.core.app.ui.model.User;
+
 import retrofit2.http.*;
 import rx.Observable;
 
@@ -10,5 +13,8 @@ public interface ApiService {
 
     @GET("adat/sk/{cityId}.html")
     Observable<MainModel> loadDataByRetrofit(@Path("cityId") String cityId);
+
+    @GET("api")
+    Observable<User> loadUser();
 
 }

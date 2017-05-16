@@ -2,54 +2,58 @@ package com.core.app.ui.activity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.core.app.R;
 import com.core.app.base.MvpActivity;
-import com.core.app.service.MainModel;
-import com.core.app.ui.adapter.MainPresenter;
+import com.core.app.data.UserData;
+import com.core.app.presenter.UserPresenter;
+import com.core.app.ui.model.User;
 import com.core.app.utils.ImageUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends MvpActivity<MainPresenter> implements MainView {
+public class MainActivity extends MvpActivity<UserPresenter> implements UserData {
 
-    @BindView(R.id.imageView2)
     ImageView imageView2;
-    @BindView(R.id.textView2)
     TextView textView2;
-    @BindView(R.id.editText)
     EditText editText;
-    @BindView(R.id.button2)
-    Button button2;
+
+    TextView button2;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        ImageUtils.loadUrl(this, "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494420051325&di=54d86ef9cd27702a5c9120c8ec4c928c&imgtype=0&src=http%3A%2F%2Fstatic11.photo.sina.com.cn%2Fmiddle%2F543f8834h87b7cd05af3a%26690", imageView2);
+
+        textView2 = (TextView) findViewById(R.id.textView2);
+        imageView2 = (ImageView) findViewById(R.id.imageView2);
+        editText = (EditText) findViewById(R.id.editText);
+        button2 = (TextView) findViewById(R.id.button2);
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mPresenter.loadMainBanner();
+            }
+        });
     }
 
     @Override
-    protected MainPresenter createPresenter() {
-        return new MainPresenter(this);
-    }
-
-    @OnClick(R.id.button2)
-    public void onButton(View view) {
-        mPresenter.loadMainBanner();
+    protected UserPresenter createPresenter() {
+        return new UserPresenter(this);
     }
 
     @Override
-    public void getDataSuccess(MainModel response) {
-        textView2.setText(response.getWeatherinfo().getCity());
-        editText.setText(response.getWeatherinfo().getTime());
+    public void getDataSuccess(User response) {
+        textView2.setText(response.getInfo().getSeed());
+        editText.setText(response.getResults().get(0).getEmail());
+        ImageUtils.loadUrl(this, response.getResults().get(0).getPicture().getThumbnail(), imageView2);
 
     }
 

@@ -149,42 +149,6 @@ public class CommonUtil {
     }
 
     /**
-     * 天气代码 100 为晴 101-213 500-901 为阴 300-406为雨
-     *
-     * @param code 天气代码
-     * @return 天气情况
-     */
-    public static String getWeatherType(int code) {
-        if (code == 100) {
-            return "晴";
-        }
-        if ((code >= 101 && code <= 213) || (code >= 500 && code <= 901)) {
-            return "阴";
-        }
-        if (code >= 300 && code <= 406) {
-            return "雨";
-        }
-        return "错误";
-    }
-
-    /**
-     * 匹配掉错误信息
-     */
-    public static String replaceCity(String city) {
-        city = safeText(city).replaceAll("(?:省|市|自治区|特别行政区|地区|盟)", "");
-        return city;
-    }
-
-    /**
-     * 匹配掉无关信息
-     */
-
-    public static String replaceInfo(String city) {
-        city = safeText(city).replace("API没有", "");
-        return city;
-    }
-
-    /**
      * Java 中有一个 Closeable 接口,标识了一个可关闭的对象,它只有一个 close 方法.
      */
     public static void closeQuietly(Closeable closeable) {

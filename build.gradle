@@ -7,6 +7,8 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.1'
         classpath 'me.tatarka:gradle-retrolambda:3.6.1'
+        //添加apt插件
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -16,6 +18,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 }
 
@@ -29,6 +32,8 @@ ext {
     supportLibraryVersion = '25.1.0'
     supportLayoutVersion = '1.0.2'
 
+    multidexVersion = '1.0.1'
+    autolayoutVersion = '1.4.5'
     calligraphyVersion = '2.2.0'
     butterKnifeVersion = '8.5.1'
     timberVersion = '4.5.1'
@@ -36,10 +41,12 @@ ext {
 
     rxjava2Version = '2.1.0'
     rxandroidVersion = '2.0.1'
+    rxerrorVersion = '2.0.1'
     rxlifecycleVersion = '1.0'
     retrofitVersion = '2.2.0'
     okhttp3Version = '3.7.0'
     glideVersion = '3.7.0'
+    daggerVersion = '2.4'
 
     //Test dependencies
     junitVersion = '4.12'

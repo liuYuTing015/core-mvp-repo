@@ -87,7 +87,7 @@ public class RetrofitSingleton {
         Interceptor requestInterceptor = chain -> {
             Request request = chain.request()
                     .newBuilder()
-                    .addHeader("Accept", "application/vnd.yuanzi.v4+json")
+                    //.addHeader("Accept", "application/vnd.yuanzi.v4+json")
                     .addHeader("Content-Type", "application/json")
                     .addHeader("Range", "page:1,max:10")
                     .addHeader("Authorization", "")
@@ -110,7 +110,7 @@ public class RetrofitSingleton {
 
     private static void initRetrofit() {
         sRetrofit = new Retrofit.Builder()
-                .baseUrl("http://www.weather.com.cn/")
+                .baseUrl("https://randomuser.me/")
                 .client(sOkHttpClient)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())

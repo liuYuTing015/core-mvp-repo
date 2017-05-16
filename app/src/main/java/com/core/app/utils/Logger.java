@@ -14,7 +14,7 @@ import java.util.Set;
  */
 
 public class Logger {
-    private static final String TAG="TAGGG";
+    private static final String TAG = "TAGGG";
     private static final char TOP_LEFT_CORNER = '╔';
     private static final char BOTTOM_LEFT_CORNER = '╚';
     private static final char MIDDLE_CORNER = '╟';
@@ -79,20 +79,21 @@ public class Logger {
         }
     }
 
-    private static void i(String str){
-        printHunk(I,str);
-    }
-    private static void e(String str){
-        printHunk(E,str);
-    }
-    private static void d(String str){
-        printHunk(D,str);
-    }
-    private static void v(String str){
-        printHunk(V,str);
+    private static void i(String str) {
+        printHunk(I, str);
     }
 
+    private static void e(String str) {
+        printHunk(E, str);
+    }
 
+    private static void d(String str) {
+        printHunk(D, str);
+    }
+
+    private static void v(String str) {
+        printHunk(V, str);
+    }
 
 
     /**
@@ -276,19 +277,4 @@ public class Logger {
         }
         printHunk(type, BOTTOM_BORDER);
     }
-
-
-    String[] strs={"qewq","qweqwe","qweqwe","qweqwe"};
-
-    public void onbbb(){
-        for (String str : strs){
-
-        }
-
-        for (int i=0;i<strs.length;i++){
-            String str = strs[i];
-        }
-    }
-
-
 }

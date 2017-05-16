@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.TextView;
 
 import com.core.app.utils.ImageUtils;
@@ -37,7 +36,6 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.i(TAG, "=========== onDestroy ===========>");
         ImageUtils.clear(this);
         EventBus.getDefault().unregister(this);
     }
