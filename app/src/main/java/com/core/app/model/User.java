@@ -1,4 +1,4 @@
-package com.core.app.ui.model;
+package com.core.app.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +23,20 @@ public class User {
 
     List<Result> results = new ArrayList<>();
     Info info = new Info();
+
+    public User(String titleName) {
+        this.titleName = titleName;
+    }
+
+    public String getTitleName() {
+        return "dagger name diudiu11";
+    }
+
+    public void setTitleName(String titleName) {
+        this.titleName = titleName;
+    }
+
+    public String titleName;
 
     public class Info {
 

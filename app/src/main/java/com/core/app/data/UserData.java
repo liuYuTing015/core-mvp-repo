@@ -1,6 +1,6 @@
 package com.core.app.data;
 
-import com.core.app.ui.model.User;
+import com.core.app.model.User;
 
 public interface UserData {
     void getDataSuccess(User response);

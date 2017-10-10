@@ -1,7 +1,7 @@
 package com.core.app.service;
 
-import com.core.app.ui.model.MainModel;
-import com.core.app.ui.model.User;
+import com.core.app.model.MainModel;
+import com.core.app.model.User;
 
 import retrofit2.http.*;
 import rx.Observable;

@@ -1,4 +1,4 @@
-package com.core.app.ui.model;
+package com.core.app.model;
 
 /**
  * 业务具体处理，包括负责存储、检索、操纵数据等

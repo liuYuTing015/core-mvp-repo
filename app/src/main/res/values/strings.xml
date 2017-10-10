@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">core-mvp-repo</string>
     <string name="dummy">dummy</string>
+    <string name="hello_kotlin">Hello Kotlin</string>
 </resources>

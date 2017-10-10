@@ -2,7 +2,7 @@ package com.core.app.presenter;
 
 import com.core.app.base.BasePresenter;
 import com.core.app.service.ApiCallback;
-import com.core.app.ui.model.MainModel;
+import com.core.app.model.MainModel;
 import com.core.app.data.MainData;
 
 public class MainPresenter extends BasePresenter<MainData> {

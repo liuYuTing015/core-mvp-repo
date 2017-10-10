@@ -1,14 +1,10 @@
 package com.core.app.base;
 
-import android.app.Activity;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.core.app.BuildConfig;
-import com.core.app.ui.model.AccessToken;
-import com.core.app.ui.model.User;
+import com.core.app.model.AccessToken;
+import com.core.app.model.User;
 import com.core.app.utils.PreferencesUtils;
 import com.google.gson.Gson;
 

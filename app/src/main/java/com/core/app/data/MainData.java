@@ -1,6 +1,6 @@
 package com.core.app.data;
 
-import com.core.app.ui.model.MainModel;
+import com.core.app.model.MainModel;
 
 public interface MainData {
     void getDataSuccess(MainModel response);

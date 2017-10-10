@@ -1,4 +1,4 @@
-package com.core.app.ui.model;
+package com.core.app.model;
 
 public class Response {
     public String getMessage() {

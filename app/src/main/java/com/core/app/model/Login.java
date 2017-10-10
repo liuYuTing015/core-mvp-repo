@@ -1,4 +1,4 @@
-package com.core.app.ui.model;
+package com.core.app.model;
 
 /**
  * Created by Ting on 17/5/16.

@@ -3,7 +3,7 @@ package com.core.app.presenter;
 import com.core.app.base.BasePresenter;
 import com.core.app.data.UserData;
 import com.core.app.service.ApiCallback;
-import com.core.app.ui.model.User;
+import com.core.app.model.User;
 
 public class UserPresenter extends BasePresenter<UserData> {
 
